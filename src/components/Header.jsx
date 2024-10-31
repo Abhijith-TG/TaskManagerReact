@@ -1,31 +1,38 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Header() {
-    const [data, setData] = useState([]);
-    const [typed,setTyped] = useState('');
 
-    function onDataSubmit(e){
-        e.preventDefault();
-        setData([...data,typed])
-        console.log(data);
-        setTyped("")
-    }
+   
+    const [user,setUser] = useState("");
+    const names = [
+        "Sam","Alex","Wanda","Stark","Strange"
+    ]
+    useEffect(()=>{
+        const num = Math.floor(Math.random()*5);
+        setUser(names[num]);
+    },[])
+
     
-    
-    
+
 
   return (
-    <div>
-        <h1>Header</h1>
+    <div className=' flex flex-col w-screen bg-gray-300 h-24 flex-wrap ' >
+        <div className=" flex items-center  justify-around h-full ">
+                <div className="flex flex-col ">
+            <h1 className=' text-4xl  ' >
+             Welcome {user} !
+            </h1>
+            <h2 className='text-xl text-gray-500' >
+                Have a nice day
+            </h2>
+            </div>
+            <div className=' w-12 h-12 bg-violet-400 rounded-full  ' >
 
-        <form action="" onSubmit={onDataSubmit} >
-            <input type="text" required name='texts' value={typed} onChange={(e)=>setTyped(e.target.value)} />
-            <button  >Click</button>
-        </form>
-
-       
-
+            </div>
+        </div>
+        <div className=' ' >
+            
+        </div>
     </div>
   )
 }
