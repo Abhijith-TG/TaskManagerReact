@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export default function Body() {
 
   const [truth,setTruth] = useState(false);
+  //Hard coded tasks 
   const [tasks,setTasks] = useState([
     {
       title:"Learn React",
@@ -25,7 +26,7 @@ export default function Body() {
       description:"Trying to learn backend "
     },
   ]);
-
+// function to setTruth true or false and prevent form submission
   const showAdditional =(e)=>{
     e.preventDefault()
     setTruth(!truth);
@@ -42,6 +43,7 @@ export default function Body() {
       </div>
 
       {
+        //when truth become true the following code executes
         truth &&
 
         <div className='flex flex-col items-center mt-5 gap-5 justify-center'  >

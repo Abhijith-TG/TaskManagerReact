@@ -4,6 +4,7 @@ export default function Header() {
 
    
     const [user,setUser] = useState("");
+    //hard coded usernames
     const names = [
         "Sam","Alex","Wanda","Stark","Strange"
     ]
