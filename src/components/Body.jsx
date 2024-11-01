@@ -56,17 +56,18 @@ export default function Body() {
       <div className='text-white flex mt-16 gap-5 items-center justify-center   flex-wrap' >
         {
           tasks.map((task,id)=>
-            <div key={id} className='w-52 break-all text-center bg-violet-600 p-8 rounded-xl ' >
-                <h2>
+            <div key={id} className=' w-52 lg:w-1/4 break-all text-center bg-violet-600 py-8 rounded-xl ' >
+                <h2 className='text-2xl ' >
                   {task.title}
-
                 </h2>
-                <p>
+                <div className='w-full bg-black px-8 py-3 my-3 ' >
+                <p className='text-lg text-blue-500' >
                   {task.datas}
                 </p>
                 <p  >
                   {task.description}
                 </p>
+                </div>
                 <button className=" bg-green-600 py-1 px-3 hover:opacity-80  rounded text-white">
                   Done
                 </button>
